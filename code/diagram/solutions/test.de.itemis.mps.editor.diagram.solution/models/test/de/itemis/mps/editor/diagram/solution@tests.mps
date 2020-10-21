@@ -109,6 +109,7 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
+      <concept id="1070534513062" name="jetbrains.mps.baseLanguage.structure.DoubleType" flags="in" index="10P55v" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
@@ -177,7 +178,6 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
-      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -301,6 +301,12 @@
       </concept>
       <concept id="1171983834376" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" flags="nn" index="3vFxKo">
         <child id="1171983854940" name="condition" index="3vFALc" />
+      </concept>
+      <concept id="1172073500303" name="jetbrains.mps.baseLanguage.unitTest.structure.Message" flags="ng" index="3_1$Yv">
+        <child id="1172073511101" name="message" index="3_1BAH" />
+      </concept>
+      <concept id="1172075514136" name="jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder" flags="ng" index="3_9gw8">
+        <child id="1172075534298" name="message" index="3_9lra" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -5035,27 +5041,48 @@
               </node>
             </node>
           </node>
-          <node concept="3vwNmj" id="3zMER65L7eb" role="3cqZAp">
-            <node concept="3eOSWO" id="3zMER65L87M" role="3vwVQn">
-              <node concept="3cmrfG" id="3zMER65L87P" role="3uHU7w">
-                <property role="3cmrfH" value="200" />
-              </node>
-              <node concept="3cpWsd" id="3zMER65L7Jr" role="3uHU7B">
-                <node concept="2OqwBi" id="3zMER65L7qH" role="3uHU7B">
-                  <node concept="37vLTw" id="3zMER65L7qb" role="2Oq$k0">
+          <node concept="3clFbH" id="2BBR7lucfxZ" role="3cqZAp" />
+          <node concept="3cpWs8" id="2BBR7lubFEz" role="3cqZAp">
+            <node concept="3cpWsn" id="2BBR7lubFE$" role="3cpWs9">
+              <property role="TrG5h" value="difference" />
+              <property role="3TUv4t" value="true" />
+              <node concept="10P55v" id="2BBR7lubFzF" role="1tU5fm" />
+              <node concept="3cpWsd" id="2BBR7lubFE_" role="33vP2m">
+                <node concept="2OqwBi" id="2BBR7lubFEA" role="3uHU7B">
+                  <node concept="37vLTw" id="2BBR7lubFEB" role="2Oq$k0">
                     <ref role="3cqZAo" node="3zMER65KVJ1" resolve="originalBounds" />
                   </node>
-                  <node concept="liA8E" id="3zMER65L7B_" role="2OqNvi">
+                  <node concept="liA8E" id="2BBR7lubFEC" role="2OqNvi">
                     <ref role="37wK5l" to="nkm5:190K99K1zDx" resolve="getWidth" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="3zMER65L7LN" role="3uHU7w">
-                  <node concept="37vLTw" id="3zMER65L7Kx" role="2Oq$k0">
+                <node concept="2OqwBi" id="2BBR7lubFED" role="3uHU7w">
+                  <node concept="37vLTw" id="2BBR7lubFEE" role="2Oq$k0">
                     <ref role="3cqZAo" node="3zMER65L2mT" resolve="fittedBounds" />
                   </node>
-                  <node concept="liA8E" id="3zMER65L7Zf" role="2OqNvi">
+                  <node concept="liA8E" id="2BBR7lubFEF" role="2OqNvi">
                     <ref role="37wK5l" to="nkm5:190K99K1zDx" resolve="getWidth" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vwNmj" id="2BBR7lucdTv" role="3cqZAp">
+            <node concept="2d3UOw" id="2BBR7lubZ95" role="3vwVQn">
+              <node concept="37vLTw" id="2BBR7lubFEG" role="3uHU7B">
+                <ref role="3cqZAo" node="2BBR7lubFE$" resolve="difference" />
+              </node>
+              <node concept="3cmrfG" id="2BBR7lucdTw" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
+            <node concept="3_1$Yv" id="2BBR7lubF2h" role="3_9lra">
+              <node concept="3cpWs3" id="2BBR7lubH9p" role="3_1BAH">
+                <node concept="37vLTw" id="2BBR7lubHaD" role="3uHU7w">
+                  <ref role="3cqZAo" node="2BBR7lubFE$" resolve="difference" />
+                </node>
+                <node concept="Xl_RD" id="2BBR7lubGN$" role="3uHU7B">
+                  <property role="Xl_RC" value="Expected difference between widths to be non-negative, but it was " />
                 </node>
               </node>
             </node>
